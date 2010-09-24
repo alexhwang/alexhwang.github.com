@@ -1,0 +1,63 @@
+<html>
+<body>
+
+<h1>alex hwang</h1>
+<h2><a href="javascript:unfold('about');" class="topmenu">about</a></h2>
+<div id="about">
+<li><h3>web programmer (javascript, html 5, css 3)</h3></li>
+<li><h3>golfer (5.0 index)</h3></li>
+<li><h3>student (<a href="http://jls.pausd.org">jls middle school</a>)</h3></li>
+</div>
+
+<h2><a href="javascript:unfold('projects');" class="topmenu">projects</a></h2>
+<div id="projects">
+<li><a href="http://aykhwang.github.com"><h3>soundweaver</h3></a></li>
+</div>
+<h2><a href="javascript:unfold('social');" class="topmenu">social</a></h2>
+<div id="social">
+<li><a href="http://twitter.com/aykhwang"><h3>twitter, @aykhwang</h3></li>
+<li><h3><a href="http://alexyhwang.blogspot.com">blog</a></h3></li>
+</div>
+<h2><a href="javascript:unfold('friends');" class="topmenu">friends</a></h2>
+<div id="friends">
+<li><h3><a href="http://pandamatak.com/people/panini">panini</a></h3></li>
+<li><h3><a href="http://sauyon.com">sauyon</a></h3></li>
+</div>
+<h3>=.=<br /> >.<<br /> ^.^</h3>
+<style type="text/css">
+body {
+	font-family:Arial;
+	color: #fff;
+	font-size:30px;
+	background-color: #333;
+}
+a:link, a:visited {
+	/* color: #ffcc00; */
+	color: #ffcc00;
+}
+.topmenu:link, .topmenu:visited {
+	color: lightblue;
+}
+#projects, #social, #friends, #about {
+	display:none;
+}
+h1 {
+	font-size:80px;
+}
+</style>
+<script type="text/javascript">
+var unfolded = false;
+function unfold(divid) {
+	if (document.getElementById(divid).style.display == "" || document.getElementById(divid).style.display == "none") {
+		document.getElementById(divid).style.display = "inline";
+		unfolded = true;
+	}
+	else if (document.getElementById(divid).style.display == "inline") {
+		document.getElementById(divid).style.display = "none";
+		unfolded = false;
+	}
+}
+</script>
+
+</body>
+</html>
