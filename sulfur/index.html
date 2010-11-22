@@ -1,0 +1,183 @@
+<html>
+<head>
+
+<title>Sulfur | A Project by Alex Hwang</title>
+<style type="text/css">
+body {
+	text-align:center;
+	background-color:black;
+	color:white;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light",
+    "Helvetica Neue", "Arial", sans-serif;
+	font-weight: 300;
+}
+.title {
+	font-size:70px;
+	font-weight:Bold;
+	margin:30px;
+	font-family:"Helvetica", "Arial", sans-serif;
+}
+.title:hover {
+	color:yellow;
+	cursor:hand;
+}
+.subtitle {
+	font-size:14px;
+}
+.subtitle:hover {
+	color:yellow;
+}
+.intro {
+	position:relative;
+	top:5%;
+
+}
+a, a:visited, a:link, a:active {
+	color:white;
+	text-decoration:none;
+	display:inline;
+	// font-weight:bold;
+	// font-family:"HelveticaNeue-UltraLight";
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light",
+    "Helvetica Neue", "Arial", sans-serif;
+	font-weight: 300;
+}
+a:hover {
+	color:yellow;
+}
+#main {
+	border:none;
+	overflow:none;
+	width:100%;
+	height:100%;
+}
+.header {
+	font-family:"Helvetica", "Arial", sans-serif;
+	font-weight:Bold;
+	font-size:20px;
+}
+.navi {
+	margin-top:40px;
+}
+.info {
+	margin-top:50px;
+	margin-left:20%;
+	margin-right:20%;
+	// min-height:150px;
+
+	padding:40px;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light",
+    "Helvetica Neue", "Arial", sans-serif;
+	font-weight: 300;
+	text-align:left;
+	
+	background-color:#fff;
+	
+	color:black;
+	
+	border-radius:10px;
+}
+.wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -50px;
+}
+.footer, .push {
+	height: 50px;
+}
+.main {
+	position:relative;
+	top:5%;
+}
+.right {
+	position:absolute;
+	right:20px;
+	text-align:right;
+}
+.left {
+	float:left;
+	margin-right:15px;
+}
+</style>
+</head>
+<body onload="init();">
+<div class="wrapper">
+<div class="right">
+Coded by <span style="color:red;">Alex Hwang</span><br>
+Still a WIP
+</div>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.js"></script>
+
+<div class="intro">
+
+
+<img src="img/sulfur.png" width="200px"/>
+<div class="title">Sulfur</div>
+<div class="subtitle">A Project by <span style="color:red;">Alex Hwang</span>, who's in <span style="color:red;">Mr. Berghout</span>'s <span style="color:red;">3rd</span> period Science<br>
+All Coding Done by Hand</div><br><br>
+<a style="font-size:40px" href="#" onclick="initMain();" style="font-size:25px;">Enter</a>
+
+
+
+</div>
+
+<div class="main">
+<br>
+<img src="img/sulfur.png" width="150px"/>
+<div class="title" onclick="window.location.reload()">
+Sulfur
+</div>
+<div class="navi">
+
+<a href="#" class="header" onclick="unfoldInfo('basics')">The Basics</a>
+&nbsp|&nbsp
+<a href="#" class="header" onclick="unfoldInfo('history')">History</a>
+&nbsp|&nbsp
+<a href="#" class="header" onclick="unfoldInfo('properties')">Properties</a>
+</div>
+
+<div class="info" id="info">
+Blah Blah Blah
+</div>
+
+
+
+
+
+</div>
+
+
+<script type="text/javascript">
+function init() {
+	$(".main").toggle();
+}
+function initMain() {
+	$(".intro").toggle("drop");
+	setTimeout('$(".main").toggle("drop");$(".info").hide();', '1000');
+}
+function unfoldInfo(id) {
+		
+	var info = document.getElementById("info");
+	
+	
+	setTimeout('$(".info").show("drop");', '20');
+	
+	$.ajax({
+		url: "text/"+id,
+		success: function(data) {
+			info.innerHTML = data;
+		}
+	})
+	
+}
+</script>
+<div class="push"></div>
+</div>
+
+
+<div class="footer">
+</div>
+</body>
+</html>
