@@ -1,3 +1,5 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
 
@@ -65,6 +67,8 @@ a:hover {
 	margin-right:20%;
 	// min-height:150px;
 
+	line-height:1.5;
+
 	padding:40px;
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light",
     "Helvetica Neue", "Arial", sans-serif;
@@ -91,24 +95,42 @@ a:hover {
 	top:5%;
 }
 .right {
+	
 	position:absolute;
-	right:20px;
+	right:20px; 
 	text-align:right;
+	z-index:10;
+	
 }
 .left {
 	float:left;
 	margin-right:15px;
 }
+.yh {
+	background-color:yellow;
+}
+.highlight {
+	background-color:yellow;
+	color:black !important;
+	font-weight:bold !important;
+	padding:2px;
+	border-radius:3px;
+}
+
 </style>
 </head>
 <body onload="init();">
-<div class="wrapper">
 <div class="right">
 Coded by <span style="color:red;">Alex Hwang</span><br>
 Still a WIP
+<br><br>
+Key points highlighted: <a href="#" class="highlight" onclick="toggleHighlight();" id="toggleH">on</a>
 </div>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.js"></script>
+<div class="wrapper">
+
+
+<script type="text/javascript" src="resources/jquery.min.js"></script>
+<script type="text/javascript" src="resources/jquery-ui.js"></script>
 
 <div class="intro">
 
@@ -139,7 +161,7 @@ Sulfur
 </div>
 
 <div class="info" id="info">
-Blah Blah Blah
+
 </div>
 
 
@@ -150,6 +172,12 @@ Blah Blah Blah
 
 
 <script type="text/javascript">
+
+var highlight = true;
+
+
+/////////////////////////////////////////////////
+
 function init() {
 	$(".main").toggle();
 }
@@ -162,7 +190,8 @@ function unfoldInfo(id) {
 	var info = document.getElementById("info");
 	
 	
-	setTimeout('$(".info").show("drop");', '20');
+	
+	
 	
 	$.ajax({
 		url: "text/"+id,
@@ -171,6 +200,50 @@ function unfoldInfo(id) {
 		}
 	})
 	
+	setTimeout('$(".info").show("drop");', '20');
+	setTimeout(function () {
+		if (highlight == false ) {
+		var highlights = document.getElementById("info").getElementsByTagName("span");
+		for (i=0;i<highlights.length;i++) {
+			highlights[i].setAttribute("class", "yd");
+		}
+	}
+	}, '20');
+	
+	
+}
+function highlight() {
+	if (highlight == false ) {
+		var highlights = document.getElementById("info").getElementsByTagName("span");
+		for (i=0;i<highlights.length;i++) {
+			highlights[i].setAttribute("class", "yd");
+		}
+	}
+}
+function toggleHighlight() {
+	var a = document.getElementById("toggleH");
+	if (a.innerHTML == "on") {
+		a.innerHTML = "off";
+		a.style.backgroundColor = "red";
+		highlight = false;
+	
+			var highlights = document.getElementById("info").getElementsByTagName("span");
+			for (i=0;i<highlights.length;i++) {
+				highlights[i].setAttribute("class", "yd");
+		}
+				
+	}
+	else {
+		a.innerHTML = "on";
+		a.style.backgroundColor = "yellow";
+		highlight = true;
+		
+			var highlights = document.getElementById("info").getElementsByTagName("span");
+			for (i=0;i<highlights.length;i++) {
+				highlights[i].setAttribute("class", "yh");
+			}
+		
+	}
 }
 </script>
 <div class="push"></div>
