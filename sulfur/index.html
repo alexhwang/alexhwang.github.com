@@ -133,9 +133,10 @@ a:hover {
 <body onload="init();">
 <div class="right">
 Coded by <span style="color:red;">Alex Hwang</span><br>
-Still a WIP
-<br><br>
+<br>
 Key points highlighted: <a href="#" class="highlight" onclick="toggleHighlight();" id="toggleH">on</a>
+<br><br>
+<a href="#" class="header" onclick="unfoldInfo('bib')">Bibliography</a>
 </div>
 <div class="wrapper">
 
@@ -147,7 +148,8 @@ Key points highlighted: <a href="#" class="highlight" onclick="toggleHighlight()
 
 
 <img src="img/sulfur.png" width="200px"/>
-<div class="title">Sulfur</div>
+<div class="title">Sulfur<br><span style="font-family:Georgia;font-size:14px">&nbsp&uarr&nbsp a project by Alex Hwang</span>
+</div>
 <div class="subtitle">A Project by <span style="color:red;">Alex Hwang</span>, who's in <span style="color:red;">Mr. Berghout</span>'s <span style="color:red;">3rd</span> period Science<br>
 All Coding Done by Hand</div><br><br>
 <a style="font-size:40px" href="#" onclick="initMain();" style="font-size:25px;">Enter</a>
@@ -160,8 +162,9 @@ All Coding Done by Hand</div><br><br>
 <br>
 <img src="img/sulfur.png" width="150px"/>
 <div class="title" onclick="window.location.reload()">
-Sulfur
+Sulfur<br><span style="font-family:Georgia;font-size:14px">&nbsp&uarr&nbsp a project by <span style="color:yellow">Alex Hwang</span></span>
 </div>
+
 <div class="navi">
 
 <a href="#" class="header" onclick="unfoldInfo('basics')">The Basics</a>
@@ -169,6 +172,17 @@ Sulfur
 <a href="#" class="header" onclick="unfoldInfo('history')">History</a>
 &nbsp|&nbsp
 <a href="#" class="header" onclick="unfoldInfo('properties')">Properties</a>
+&nbsp|&nbsp
+<a href="#" class="header" onclick="unfoldInfo('found')">Occurrence</a>
+&nbsp|&nbsp
+<a href="#" class="header" onclick="unfoldInfo('obtained')">Obtainment</a>
+&nbsp|&nbsp
+<a href="#" class="header" onclick="unfoldInfo('uses')">Uses</a>
+&nbsp|&nbsp
+<a href="#" class="header" onclick="unfoldInfo('misc')">Miscellaneous</a>
+
+
+
 </div>
 
 <div class="info" id="info">
